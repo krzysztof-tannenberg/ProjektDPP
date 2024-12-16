@@ -1,17 +1,33 @@
 {
   "nodes": [
-    {"id": "A", "type": "bus_stop", "name": "Przystanek Główna"},
-    {"id": "B", "type": "bus_stop", "name": "Przystanek Młynarska"},
-    {"id": "C", "type": "bus_stop", "name": "Przystanek Parkowa"},
-    {"id": "D", "type": "depot", "name": "Zajezdnia Północ"},
-    {"id": "E", "type": "depot", "name": "Zajezdnia Południe"}
+    {
+      "id": "A",
+      "type": "bus stop ",
+      "name": "zadupie"
+    },
+    {
+      "id": "B",
+      "type": "bus stop ",
+      "name": "cos tam "
+    },
+    {
+      "id": "C",
+      "type": "bus stop ",
+      "name": "tiruriru"
+    }
   ],
   "edges": [
-    {"from": "A", "to": "B", "distance": 3, "time": 6},
-    {"from": "B", "to": "C", "distance": 2, "time": 4},
-    {"from": "C", "to": "D", "distance": 5, "time": 10},
-    {"from": "D", "to": "A", "distance": 8, "time": 16},
-    {"from": "B", "to": "E", "distance": 6, "time": 12},
-    {"from": "E", "to": "C", "distance": 4, "time": 8}
+    {
+      "from": "A",
+      "to": "B",
+      "distance": 10,
+      "time": 6
+    },
+    {
+      "from": "B",
+      "to": "C",
+      "distance": 12,
+      "time": 7
+    }
   ]
 }
