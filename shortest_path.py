@@ -13,22 +13,35 @@ import heapq
 
 INF = float('inf')
 
+class Graph:
+    def __init__(self):
+        self.nodes = {}  # Słownik wierzchołków
+        self.edges = {}  # Słownik krawędzi: {wierzchołek: lista krawędzi}
+
+    def add_node(self, id, type, name):
+        self.nodes[id] = {"type": type, "name": name}
+
+    def add_edge(self, from_node, to_node, **attributes):
+        if from_node not in self.edges:
+            self.edges[from_node] = []
+        self.edges[from_node].append({"to": to_node, **attributes})
+
 def dijkstra(graph, start: str, end: str) -> Tuple[float, List[str]]:
     """
-    Implementacja algorytmu Dijkstry do znajdowania najkrótszej ścieżki.
+        Implementacja algorytmu Dijkstry do znajdowania najkrótszej ścieżki.
 
-    Args:
-        graph (Dict): Słownik reprezentujący graf w formie list sąsiedztwa.
-        start (int): Wierzchołek początkowy.
-        end (int): Wierzchołek końcowy.
+        Args:
+            graph (Dict): Słownik reprezentujący graf w formie list sąsiedztwa.
+            start (int): Wierzchołek początkowy.
+            end (int): Wierzchołek końcowy.
 
-    Returns:
-        Tuple[List[int], float]: Krotka zawierająca listę wierzchołków tworzących
-            najkrótszą ścieżkę oraz jej długość.
+        Returns:
+            Tuple[List[int], float]: Krotka zawierająca listę wierzchołków tworzących
+                najkrótszą ścieżkę oraz jej długość.
 
-    Raises:
-        ValueError: Gdy start lub end nie istnieją w grafie.
-    """
+        Raises:
+            ValueError: Gdy start lub end nie istnieją w grafie.
+        """
     distances = {node: float('inf') for node in graph.nodes}
     distances[start] = 0
     previous_nodes = {node: None for node in graph.nodes}
@@ -52,7 +65,7 @@ def dijkstra(graph, start: str, end: str) -> Tuple[float, List[str]]:
             neighbor = edge["to"]
             if neighbor in visited:
                 continue
-                
+
             edge_weight = float(edge.get("distance", float('inf')))
             new_distance = current_distance + edge_weight
 
@@ -61,7 +74,6 @@ def dijkstra(graph, start: str, end: str) -> Tuple[float, List[str]]:
                 previous_nodes[neighbor] = current_node
                 heapq.heappush(priority_queue, (new_distance, neighbor))
 
-    # Rekonstrukcja ścieżki
     path = []
     current = end
     while current:
