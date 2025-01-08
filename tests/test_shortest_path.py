@@ -31,7 +31,7 @@ def test_dijkstra_shortest_path():
     graph.add_edge("B", "C", distance=3, time=6)
     graph.add_edge("A", "C", distance=10, time=15)
 
-    distance, path = dijkstra(graph, "A", "C", weight="distance")
+    distance, path = dijkstra(graph, "A", "C")  # Usunięto argument weight
     assert distance == 8  # Najkrótsza droga: A -> B -> C
     assert path == ["A", "B", "C"]
 
@@ -39,7 +39,7 @@ def test_dijkstra_shortest_path():
 def test_dijkstra_no_path():
     """
     Test zachowania algorytmu gdy nie istnieje ścieżka między wierzchołkami.
-    
+
     Sprawdza czy:
     - Algorytm zwraca nieskończoność jako dystans
     - Zwracana ścieżka jest pustą listą
@@ -47,6 +47,6 @@ def test_dijkstra_no_path():
     graph = Graph()
     graph.add_node("A", "bus_stop", "Przystanek A")
     graph.add_node("B", "bus_stop", "Przystanek B")
-    distance, path = dijkstra(graph, "A", "B", weight="distance")
+    distance, path = dijkstra(graph, "A", "B")  # Usunięto argument weight
     assert distance == float("inf")
     assert path == []
