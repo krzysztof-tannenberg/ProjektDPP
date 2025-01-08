@@ -1,79 +1,67 @@
 {
   "nodes": [
     {
-      "id": "A",
-      "type": "bus_stop",
-      "name": "Przystanek G\u0142\u00f3wna"
+      "id": "WAW",
+      "type": "airport",
+      "name": "Warszawa"
     },
     {
-      "id": "B",
-      "type": "bus_stop2",
-      "name": "Przystanek M\u0142ynarsk"
+      "id": "KRK",
+      "type": "airport",
+      "name": "Kraków"
     },
     {
-      "id": "C",
-      "type": "depot",
-      "name": "Koniec"
+      "id": "GDN",
+      "type": "airport",
+      "name": "Gdańsk"
     },
     {
-      "id": "D",
-      "type": "depot",
-      "name": "Zajezdnia P\u0102\u0142\u0139\u201anoc"
+      "id": "WRO",
+      "type": "airport",
+      "name": "Wrocław"
     },
     {
-      "id": "E",
-      "type": "depot",
-      "name": "Zajezdnia Po\u0139\u201audnie"
+      "id": "POZ",
+      "type": "airport",
+      "name": "Poznań"
     }
   ],
   "edges": [
     {
-      "from": "A",
-      "to": "B",
-      "distance": 3,
-      "time": 6
+      "from": "WAW",
+      "to": "KRK",
+      "distance": 300,
+      "time": 45
     },
     {
-      "from": "A",
-      "to": "B",
-      "distance": 3,
-      "time": 6
+      "from": "WAW",
+      "to": "GDN",
+      "distance": 350,
+      "time": 55
     },
     {
-      "from": "B",
-      "to": "C",
-      "distance": 2,
-      "time": 4
+      "from": "KRK",
+      "to": "WRO",
+      "distance": 270,
+      "time": 40
     },
     {
-      "from": "B",
-      "to": "E",
-      "distance": 6,
-      "time": 12
+      "from": "GDN",
+      "to": "POZ",
+      "distance": 320,
+      "time": 50
     },
     {
-      "from": "B",
-      "to": "C",
-      "distance": 2,
-      "time": 10
+      "from": "POZ",
+      "to": "WRO",
+      "distance": 180,
+      "time": 30
     },
     {
-      "from": "C",
-      "to": "D",
-      "distance": 5,
-      "time": 10
-    },
-    {
-      "from": "D",
-      "to": "A",
-      "distance": 8,
-      "time": 16
-    },
-    {
-      "from": "E",
-      "to": "C",
-      "distance": 4,
-      "time": 8
+      "from": "WRO",
+      "to": "WAW",
+      "distance": 350,
+      "time": 55
     }
   ]
 }

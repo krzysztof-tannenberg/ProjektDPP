@@ -1,3 +1,10 @@
+"""
+Moduł testów dla algorytmu najkrótszej ścieżki.
+
+Ten moduł zawiera testy jednostkowe sprawdzające poprawność
+implementacji algorytmu Dijkstry dla różnych przypadków użycia.
+"""
+
 import sys
 import os
 
@@ -8,6 +15,14 @@ from shortest_path import dijkstra
 
 
 def test_dijkstra_shortest_path():
+    """
+    Test znajdowania najkrótszej ścieżki w grafie.
+    
+    Sprawdza czy:
+    - Algorytm znajduje najkrótszą ścieżkę
+    - Długość ścieżki jest poprawna
+    - Kolejność wierzchołków w ścieżce jest prawidłowa
+    """
     graph = Graph()
     graph.add_node("A", "bus_stop", "Przystanek A")
     graph.add_node("B", "bus_stop", "Przystanek B")
@@ -22,6 +37,13 @@ def test_dijkstra_shortest_path():
 
 
 def test_dijkstra_no_path():
+    """
+    Test zachowania algorytmu gdy nie istnieje ścieżka między wierzchołkami.
+    
+    Sprawdza czy:
+    - Algorytm zwraca nieskończoność jako dystans
+    - Zwracana ścieżka jest pustą listą
+    """
     graph = Graph()
     graph.add_node("A", "bus_stop", "Przystanek A")
     graph.add_node("B", "bus_stop", "Przystanek B")

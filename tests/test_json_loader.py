@@ -1,3 +1,10 @@
+"""
+Moduł testów dla funkcji ładowania danych JSON.
+
+Ten moduł zawiera testy jednostkowe sprawdzające poprawność
+wczytywania i przetwarzania danych z plików JSON.
+"""
+
 import sys
 import os
 import json
@@ -9,6 +16,18 @@ from json_loader import load_graph_from_json
 
 
 def test_load_graph_from_json():
+    """
+    Test wczytywania grafu z pliku JSON.
+    
+    Sprawdza czy:
+    - Dane są poprawnie wczytywane z pliku
+    - Węzły są poprawnie utworzone
+    - Krawędzie są poprawnie utworzone
+    - Atrybuty węzłów i krawędzi są zachowane
+    
+    Note:
+        Test tworzy tymczasowy plik JSON, który jest usuwany po zakończeniu testu.
+    """
     test_json = {
         "nodes": [
             {"id": "A", "type": "bus_stop", "name": "Przystanek Główna"},

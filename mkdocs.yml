@@ -1,0 +1,26 @@
+site_name: System Wizualizacji Grafów
+theme:
+  name: material
+  language: pl
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+
+nav:
+  - Strona główna: index.md
+  - API:
+    - JSON Loader: api/json_loader.md
+    - Graph: api/graph.md
+  - Poradnik:
+    - Instalacja: guide/installation.md
+    - Pierwsze kroki: guide/getting-started.md
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - sys.path.append("src") 

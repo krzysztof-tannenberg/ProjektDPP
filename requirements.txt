@@ -1,2 +1,6 @@
 pytest
 graphviz
+mkdocs-material>=9.0.0
+mkdocstrings[python]>=0.18.0
+networkx>=2.6.0
+matplotlib>=3.4.0
