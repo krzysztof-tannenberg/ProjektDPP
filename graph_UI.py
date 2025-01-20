@@ -389,7 +389,7 @@ class GraphApp:
         self.canvas.yview_scroll(int(-1*(event.delta/120)), "units")
         
     def visualize(self, highlight_path=None):
-        """Wywołuje funkcję wizualizacji grafu. A"""
+        """Wywołuje funkcję wizualizacji grafu."""
         try:
             visualize_graph(self.graph, highlight_path)
         except Exception as e:
