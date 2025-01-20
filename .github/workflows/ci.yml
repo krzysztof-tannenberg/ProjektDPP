@@ -1,4 +1,4 @@
-name: Dokumentacja CI
+name: Koncowe CI
 
 on:
   push:
@@ -29,16 +29,6 @@ jobs:
       - name: Run tests
         run: pytest tests/
 
-      - name: Generate documentation
-        run: |
-          pip install mkdocs mkdocs-material mkdocstrings
-          mkdocs build
-
-      - name: Deploy documentation
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
 
   lint:
     name: Lint Code
